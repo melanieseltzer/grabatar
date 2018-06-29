@@ -2,6 +2,8 @@
 
 > Easily grab your **G**lobally **R**ecognized **Avatar**
 
+[Live Site](https://stoic-jang-75a2ec.netlify.com/)
+
 ## 🚀 Local Development
 
 Fork and install dependencies:
