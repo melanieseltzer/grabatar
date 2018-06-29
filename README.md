@@ -1,6 +1,6 @@
-# 👾 Grabatar [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+# 👾 Grabatar [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![dependencies Status](https://david-dm.org/melanieseltzer/grabatar/status.svg)](https://david-dm.org/melanieseltzer/grabatar) [![devDependencies Status](https://david-dm.org/melanieseltzer/grabatar/dev-status.svg)](https://david-dm.org/melanieseltzer/grabatar?type=dev)
 
-> Easily find your **G**lobally **R**ecognized **Avatar**
+> Easily grab your **G**lobally **R**ecognized **Avatar**
 
 ## 🚀 Local Development
 

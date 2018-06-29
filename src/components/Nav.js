@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const NavBarItem = styled.a`
+  transition: all 0.2s ease-in-out;
+  :hover {
+    background-color: transparent !important;
+    transform: scale(1.03);
+  }
   > h1 img {
     margin-right: 10px;
   }
@@ -16,11 +21,10 @@ class Nav extends Component {
             <div className="navbar-brand">
               <NavBarItem className="navbar-item" href="/">
                 <h1 className="title">
-                  <img
-                    src="https://www.gravatar.com/avatar/6911773b6510cdabb2144fb3092b720d?s=30&f=y&d=retro"
-                    alt="Grabatar"
-                  />
-                  Grabatar
+                  <span role="img" aria-label="Space Invader">
+                    👾
+                  </span>
+                  &nbsp; Grabatar
                 </h1>
               </NavBarItem>
             </div>

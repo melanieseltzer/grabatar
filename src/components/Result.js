@@ -1,15 +1,81 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-class Nav extends Component {
+const Box = styled.div`
+  p {
+    word-break: break-all;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  > div {
+    font-weight: bold;
+    padding: 10px;
+  }
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
+`;
+
+class Result extends Component {
+  renderHelper() {
+    const hash = this.props.match.params.hash;
+
+    return (
+      <Box className="box">
+        <Container>
+          <div>
+            <img
+              src={`https://www.gravatar.com/avatar/${hash}?s=200&r=g`}
+              alt="Gravatar"
+            />
+            <p>G</p>
+          </div>
+          <div>
+            <img
+              src={`https://www.gravatar.com/avatar/${hash}?s=200&r=pg`}
+              alt="Gravatar"
+            />
+            <p>PG</p>
+          </div>
+          <div>
+            <img
+              src={`https://www.gravatar.com/avatar/${hash}?s=200&r=r`}
+              alt="Gravatar"
+            />
+            <p>R</p>
+          </div>
+          <div>
+            <img
+              src={`https://www.gravatar.com/avatar/${hash}?s=200&r=x`}
+              alt="Gravatar"
+            />
+            <p>X</p>
+          </div>
+        </Container>
+        <p>https://s.gravatar.com/avatar/{hash}</p>
+      </Box>
+    );
+  }
+
   render() {
     return (
       <div className="hero-body">
         <div className="container has-text-centered">
           <div className="column is-6 is-offset-3">
-            <h2 className="subtitle is-3">Result for 'email'</h2>
-            <div className="box">
-              <p>Test</p>
-            </div>
+            {this.renderHelper()}
+            <h2 className="subtitle is-5">
+              <Link to="/">
+                Grab another &nbsp;
+                <span role="img" aria-label="Mag">
+                  🔍
+                </span>
+              </Link>
+            </h2>
           </div>
         </div>
       </div>
@@ -17,4 +83,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default Result;

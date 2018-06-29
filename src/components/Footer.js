@@ -7,6 +7,9 @@ fontawesome.library.add(faGithub);
 
 const Footer = styled.footer`
   background: transparent;
+  > div p a {
+    margin-right: 1em;
+  }
 `;
 
 class Nav extends Component {
@@ -15,22 +18,18 @@ class Nav extends Component {
       <Footer className="footer">
         <div className="content has-text-centered">
           <p>
+            <a href="https://github.com/melanieseltzer/grabatar">
+              <span className="icon">
+                <i className="fab fa-github" />
+              </span>
+              <span>Source</span>
+            </a>
+
             <a href="https://github.com/melanieseltzer">
               Made with &nbsp;
               <span role="img" aria-label="Heart">
                 ❤️
               </span>
-            </a>
-          </p>
-          <p>
-            <a
-              href="https://github.com/melanieseltzer/grabatar"
-              className="button is-outlined"
-            >
-              <span className="icon">
-                <i className="fab fa-github" />
-              </span>
-              <span>Source</span>
             </a>
           </p>
         </div>
