@@ -5,7 +5,7 @@ import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 
 fontawesome.library.add(faGithub);
 
-const Footer = styled.footer`
+const TheFooter = styled.footer`
   background: transparent;
 `;
 
@@ -17,10 +17,10 @@ const List = styled.ul`
   }
 `;
 
-class Nav extends Component {
+class Footer extends Component {
   render() {
     return (
-      <Footer className="footer">
+      <TheFooter className="footer">
         <div className="content has-text-centered">
           <List>
             <li>
@@ -51,9 +51,9 @@ class Nav extends Component {
             </a>
           </p>
         </div>
-      </Footer>
+      </TheFooter>
     );
   }
 }
 
-export default Nav;
+export default Footer;

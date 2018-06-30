@@ -23,6 +23,7 @@ class InnerForm extends Component {
     // Get the hash from the normalized email
     const hash = md5(normalizedEmail);
 
+    // Redirect to the results page with the hash
     const { history } = this.props;
     history.push(`/${hash}`);
   };
@@ -78,9 +79,7 @@ class InnerForm extends Component {
                 type="submit"
                 disabled={isSubmitting}
               >
-                <span role="img" aria-label="Mag">
-                  Grab
-                </span>
+                Grab
               </Button>
             </p>
           </form>

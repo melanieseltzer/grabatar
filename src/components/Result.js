@@ -28,55 +28,53 @@ const Container = styled.div`
 `;
 
 class Result extends Component {
-  renderHelper() {
-    const hash = this.props.match.params.hash;
-
+  renderGravatar({ url, rating }) {
     return (
-      <Box className="box">
-        <Container>
-          <div>
-            <img
-              src={`https://www.gravatar.com/avatar/${hash}?s=200&r=g`}
-              alt="Gravatar"
-            />
-            <p>G</p>
-          </div>
-          <div>
-            <img
-              src={`https://www.gravatar.com/avatar/${hash}?s=200&r=pg`}
-              alt="Gravatar"
-            />
-            <p>PG</p>
-          </div>
-          <div>
-            <img
-              src={`https://www.gravatar.com/avatar/${hash}?s=200&r=r`}
-              alt="Gravatar"
-            />
-            <p>R</p>
-          </div>
-          <div>
-            <img
-              src={`https://www.gravatar.com/avatar/${hash}?s=200&r=x`}
-              alt="Gravatar"
-            />
-            <p>X</p>
-          </div>
-        </Container>
-        <Copy data-clipboard-text={`https://s.gravatar.com/avatar/${hash}`}>
-          Copy
-        </Copy>
-        <code id="copy">https://s.gravatar.com/avatar/{hash}</code>
-      </Box>
+      <div key={rating}>
+        <img src={url} alt={rating} />
+        <p>{rating}</p>
+      </div>
     );
   }
 
   render() {
+    const hash = this.props.match.params.hash;
+    const baseURL = `https://www.gravatar.com/avatar/${hash}?s=200&r=`;
+
+    const gravatars = [
+      {
+        url: `${baseURL}g`,
+        rating: 'G',
+      },
+      {
+        url: `${baseURL}pg`,
+        rating: 'PG',
+      },
+      {
+        url: `${baseURL}r`,
+        rating: 'R',
+      },
+      {
+        url: `${baseURL}x`,
+        rating: 'X',
+      },
+    ];
+
     return (
       <div className="hero-body">
         <div className="container has-text-centered">
           <div className="column is-6 is-offset-3">
-            {this.renderHelper()}
+            <Box className="box">
+              <Container>
+                {gravatars.map(gravatar => this.renderGravatar(gravatar))}
+              </Container>
+              <Copy
+                data-clipboard-text={`https://s.gravatar.com/avatar/${hash}`}
+              >
+                Copy
+              </Copy>
+              <code id="copy">https://s.gravatar.com/avatar/{hash}</code>
+            </Box>
             <h2 className="subtitle is-5">
               <Link to="/">
                 Grab another &nbsp;
