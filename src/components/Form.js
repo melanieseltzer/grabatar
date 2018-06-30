@@ -13,8 +13,17 @@ const Button = styled.button`
 
 class InnerForm extends Component {
   handleSubmit = values => {
+    // Grab email from form
+    const email = values.email;
+
+    // Normalize email addresses by trimming whitespace
+    // and converting to lowercase
+    const normalizedEmail = email.trim().toLowerCase();
+
+    // Get the hash from the normalized email
+    const hash = md5(normalizedEmail);
+
     const { history } = this.props;
-    const hash = md5(values.email);
     history.push(`/${hash}`);
   };
 
