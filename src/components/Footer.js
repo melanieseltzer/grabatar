@@ -45,6 +45,7 @@ class Nav extends Component {
             <a
               href="https://en.gravatar.com/support/what-is-gravatar/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               What is a Gravatar?
             </a>
