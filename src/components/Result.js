@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Clipboard from 'react-clipboard.js';
+
+const Copy = styled(Clipboard)`
+  float: right;
+`;
 
 const Box = styled.div`
-  p {
+  code {
+    height: 100px;
     word-break: break-all;
   }
 `;
@@ -57,7 +63,10 @@ class Result extends Component {
             <p>X</p>
           </div>
         </Container>
-        <p>https://s.gravatar.com/avatar/{hash}</p>
+        <Copy data-clipboard-text={`https://s.gravatar.com/avatar/${hash}`}>
+          Copy
+        </Copy>
+        <code id="copy">https://s.gravatar.com/avatar/{hash}</code>
       </Box>
     );
   }
