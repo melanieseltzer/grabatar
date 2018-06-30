@@ -7,8 +7,13 @@ fontawesome.library.add(faGithub);
 
 const Footer = styled.footer`
   background: transparent;
-  > div p a {
-    margin-right: 1em;
+`;
+
+const List = styled.ul`
+  li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 2em;
   }
 `;
 
@@ -17,19 +22,31 @@ class Nav extends Component {
     return (
       <Footer className="footer">
         <div className="content has-text-centered">
-          <p>
-            <a href="https://github.com/melanieseltzer/grabatar">
-              <span className="icon">
-                <i className="fab fa-github" />
-              </span>
-              <span>Source</span>
-            </a>
+          <List>
+            <li>
+              <a href="https://github.com/melanieseltzer/grabatar">
+                <span className="icon">
+                  <i className="fab fa-github" />
+                </span>
+                <span>Source</span>
+              </a>
+            </li>
 
-            <a href="https://github.com/melanieseltzer">
-              Made with &nbsp;
-              <span role="img" aria-label="Heart">
-                ❤️
-              </span>
+            <li>
+              <a href="https://github.com/melanieseltzer">
+                Made with &nbsp;
+                <span role="img" aria-label="Heart">
+                  ❤️
+                </span>
+              </a>
+            </li>
+          </List>
+          <p>
+            <a
+              href="https://en.gravatar.com/support/what-is-gravatar/"
+              target="_blank"
+            >
+              What is a Gravatar?
             </a>
           </p>
         </div>
