@@ -58,6 +58,7 @@ class InnerForm extends Component {
           <form onSubmit={handleSubmit} className="field is-grouped">
             <p className="control is-expanded">
               <input
+                autoComplete="email"
                 name="email"
                 type="text"
                 className={`input ${errors.email &&
